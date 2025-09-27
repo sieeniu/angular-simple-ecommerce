@@ -1,0 +1,12 @@
+<button
+  class="btn"
+  [class.btn-primary]="variant === 'primary'"
+  [class.btn-secondary]="variant === 'secondary'"
+  [class.btn-sm]="size === 'sm'"
+  [class.btn-md]="size === 'md'"
+  [class.btn-lg]="size === 'lg'"
+  [disabled]="disabled"
+  (click)="onClick($event)"
+>
+  <ng-content></ng-content>
+</button>

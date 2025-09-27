@@ -1,0 +1,70 @@
+@use '../../../../../assets/styles/variables' as *;
+
+.btn {
+  // Base styles
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: $radius-md;
+  font-family: $font-family-sans;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-fast;
+  user-select: none;
+
+  &:focus {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  // Size variants
+  &.btn-sm {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--font-size-sm);
+  }
+
+  &.btn-md {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-base);
+  }
+
+  &.btn-lg {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: var(--font-size-lg);
+  }
+
+  // Color variants
+  &.btn-primary {
+    background-color: var(--primary-500);
+    color: var(--white);
+
+    &:hover:not(:disabled) {
+      background-color: var(--primary-700);
+    }
+
+    &:active:not(:disabled) {
+      background-color: var(--primary-900);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: var(--secondary-100);
+    color: var(--secondary-900);
+
+    &:hover:not(:disabled) {
+      background-color: var(--secondary-300);
+    }
+
+    &:active:not(:disabled) {
+      background-color: var(--secondary-500);
+    }
+  }
+
+}

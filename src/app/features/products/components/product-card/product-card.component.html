@@ -1,0 +1,21 @@
+<article class="product-card" role="article" [attr.aria-label]="product.title">
+  <div class="product-card__image">
+    <img [src]="product.image" [alt]="product.title" loading="lazy">
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">{{ product.title }}</h3>
+    <app-badge text="{{ product.rating.rate }}" variant="warning" />
+  </div>
+
+  <div class="product-card__footer">
+    <div class="product-card__price">{{ product.price | priceFormat }}</div>
+
+    <app-button
+      variant="primary"
+      size="md"
+      (click)="onAddToCart()">
+      Add to Cart
+    </app-button>
+  </div>
+
+</article>
