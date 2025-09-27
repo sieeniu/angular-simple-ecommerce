@@ -1,0 +1,17 @@
+<span
+  class="badge"
+  [class.badge--sm]="size === 'sm'"
+  [class.badge--md]="size === 'md'"
+  [class.badge--lg]="size === 'lg'"
+  [class.badge--primary]="variant === 'primary'"
+  [class.badge--secondary]="variant === 'secondary'"
+  [class.badge--success]="variant === 'success'"
+  [class.badge--warning]="variant === 'warning'"
+  [class.badge--error]="variant === 'error'"
+  [class.badge--info]="variant === 'info'"
+  [class.badge--solid]="type === 'solid'"
+  [class.badge--outline]="type === 'outline'"
+  [attr.aria-label]="text"
+>
+  {{ text }}
+</span>

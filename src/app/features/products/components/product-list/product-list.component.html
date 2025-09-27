@@ -1,0 +1,20 @@
+<div class="product-list">
+  @if (loading()) {
+    <div class="product-list__grid product-list__grid--loading">
+      Loading...
+    </div>
+  } @else if (error()) {
+    <div class="product-list__error">
+      {{ error() }}
+    </div>
+  } @else {
+    <div class="product-list__grid">
+      @for (product of products(); track product.id) {
+        <app-product-card
+          [product]="product"
+          (addToCard)="onAddToCard($event)"
+        />
+      }
+    </div>
+  }
+</div>
