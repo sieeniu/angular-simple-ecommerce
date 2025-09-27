@@ -3,20 +3,23 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { Product } from '@core/models';
 import { BadgeComponent, ButtonComponent } from '@shared/components';
 import { PriceFormatPipe } from '@shared/pipes';
+import { LucideAngularModule, Star } from 'lucide-angular';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, PriceFormatPipe, BadgeComponent],
+  imports: [CommonModule, ButtonComponent, PriceFormatPipe, BadgeComponent, LucideAngularModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
 })
 export class ProductCardComponent {
-  @Input() public product!: Product;
-  @Input() public loading = false;
+  @Input() product!: Product;
+  @Input() loading = false;
 
   @Output() addToCard = new EventEmitter<Product>();
+
+  public readonly Star = Star;
 
   onAddToCart(): void {
     this.addToCard.emit(this.product);

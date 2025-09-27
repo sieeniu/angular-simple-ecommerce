@@ -13,5 +13,11 @@
   [class.badge--outline]="type === 'outline'"
   [attr.aria-label]="text"
 >
-  {{ text }}
+  @if (icon) {
+    <lucide-icon [img]="icon" class="badge__icon" size="16" />
+  }
+  
+  @if (text) {
+    <span class="badge__text">{{ text }}</span>
+  }
 </span>

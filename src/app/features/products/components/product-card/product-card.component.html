@@ -4,7 +4,13 @@
   </div>
   <div class="product-card__content">
     <h3 class="product-card__title">{{ product.title }}</h3>
-    <app-badge text="{{ product.rating.rate }}" variant="warning" />
+    <div class="product-card__rating">
+      <app-badge
+        text="{{ product.rating.rate }}"
+        variant="warning"
+        [icon]="Star"
+      />
+    </div>
   </div>
 
   <div class="product-card__footer">

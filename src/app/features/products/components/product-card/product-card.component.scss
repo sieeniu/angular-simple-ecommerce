@@ -40,6 +40,12 @@
     cursor: pointer;
   }
 
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+
   &__footer {
     display: flex;
     justify-content: space-between;
