@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '@core/models';
-import { BadgeComponent, ButtonComponent } from '@shared/components';
+import { BadgeComponent, ButtonComponent } from '@shared/components/ui';
 import { PriceFormatPipe } from '@shared/pipes';
 import { LucideAngularModule, Star } from 'lucide-angular';
 

@@ -9,11 +9,11 @@ import { ButtonSize, ButtonVariant } from './button.types';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @Input() public variant: ButtonVariant = 'primary';
-  @Input() public size: ButtonSize = 'md';
-  @Input() public disabled = false;
+  @Input() variant: ButtonVariant = 'primary';
+  @Input() size: ButtonSize = 'md';
+  @Input() disabled = false;
 
-  @Output() public clicked = new EventEmitter<MouseEvent>();
+  @Output() clicked = new EventEmitter<MouseEvent>();
 
   public onClick(event: MouseEvent): void {
     if (!this.disabled) {

@@ -11,9 +11,9 @@ import { BadgeSize, BadgeType, BadgeVariant } from './badge.types';
   styleUrl: './badge.component.scss',
 })
 export class BadgeComponent {
-  @Input() public text = '';
-  @Input() public variant: BadgeVariant = 'primary';
-  @Input() public size: BadgeSize = 'md';
-  @Input() public type: BadgeType = 'solid';
-  @Input() public icon?: LucideIconData;
+  @Input() text = '';
+  @Input() variant: BadgeVariant = 'primary';
+  @Input() size: BadgeSize = 'md';
+  @Input() type: BadgeType = 'solid';
+  @Input() icon?: LucideIconData;
 }

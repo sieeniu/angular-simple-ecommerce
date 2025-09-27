@@ -1,0 +1,82 @@
+<nav class="navigation">
+  <div class="navigation__container">
+    <div class="navigation__logo">
+      <a routerLink="/" class="navigation__logo-link">
+        <span class="navigation__logo-text">E-Commerce</span>
+      </a>
+    </div>
+
+    <div class="navigation__menu navigation__menu--desktop">
+      <ul class="navigation__list">
+        @for (item of navigationItems; track item.route) {
+          <li class="navigation__item">
+            <a
+              [routerLink]="item.route"
+              routerLinkActive="navigation__link--active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="navigation__link"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="navigation__actions">
+      <app-button
+        variant="ghost"
+        size="sm"
+        class="navigation__action-btn"
+        aria-label="Koszyk"
+      >
+        <lucide-icon [img]="ShoppingCart" size="20" />
+        <span class="navigation__badge">0</span>
+      </app-button>
+
+      <app-button
+        variant="ghost"
+        size="sm"
+        class="navigation__action-btn"
+        aria-label="Profil użytkownika"
+      >
+        <lucide-icon [img]="User" size="20" />
+      </app-button>
+
+      <app-button
+        variant="ghost"
+        size="sm"
+        class="navigation__menu-toggle"
+        (clicked)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle menu"
+      >
+        @if (isMenuOpen()) {
+          <lucide-icon [img]="Close" size="24" />
+        } @else {
+          <lucide-icon [img]="Menu" size="24" />
+        }
+      </app-button>
+    </div>
+  </div>
+
+  @if (isMenuOpen()) {
+    <div class="navigation__menu navigation__menu--mobile">
+      <ul class="navigation__list navigation__list--mobile">
+        @for (item of navigationItems; track item.route) {
+          <li class="navigation__item navigation__item--mobile">
+            <a
+              [routerLink]="item.route"
+              routerLinkActive="navigation__link--active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="navigation__link navigation__link--mobile"
+              (click)="closeMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</nav>
