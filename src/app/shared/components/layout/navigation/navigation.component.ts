@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, EventEmitter, Output, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LucideAngularModule, LucideIconData, Menu, ShoppingCart, User, X } from 'lucide-angular';
+import { LucideAngularModule, LucideIconData, Menu, ShoppingCart, X } from 'lucide-angular';
 
 import { ButtonComponent } from '../../ui';
 
@@ -12,11 +12,12 @@ import { ButtonComponent } from '../../ui';
   styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent {
+  @Output() openDrawer = new EventEmitter<void>();
+
   protected readonly isMenuOpen = signal(false);
   protected readonly Menu: LucideIconData = Menu;
   protected readonly Close: LucideIconData = X;
   protected readonly ShoppingCart: LucideIconData = ShoppingCart;
-  protected readonly User: LucideIconData = User;
 
   protected readonly navigationItems = [
     { label: 'Strona główna', route: '/' },
@@ -29,5 +30,9 @@ export class NavigationComponent {
 
   protected closeMenu(): void {
     this.isMenuOpen.set(false);
+  }
+
+  protected onToggleDrawer(): void {
+    this.openDrawer.emit();
   }
 }

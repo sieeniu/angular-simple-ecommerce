@@ -28,19 +28,11 @@
         variant="ghost"
         size="sm"
         class="navigation__action-btn"
+        (clicked)="onToggleDrawer()"
         aria-label="Koszyk"
       >
         <lucide-icon [img]="ShoppingCart" size="20" />
         <span class="navigation__badge">0</span>
-      </app-button>
-
-      <app-button
-        variant="ghost"
-        size="sm"
-        class="navigation__action-btn"
-        aria-label="Profil użytkownika"
-      >
-        <lucide-icon [img]="User" size="20" />
       </app-button>
 
       <app-button
