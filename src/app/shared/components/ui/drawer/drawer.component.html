@@ -1,0 +1,25 @@
+@if (isOpen()) {
+  <div
+    class="drawer__overlay"
+    tabindex="0"
+    (click)="close()"
+    (keydown.enter)="close()"
+    (keydown.escape)="close()">
+  </div>
+}
+
+<div
+  class="drawer"
+  [class.drawer--open]="isOpen()"
+  [class.drawer--right]="position === 'right'"
+  [class.drawer--left]="position === 'left'">
+
+  <div class="drawer__header">
+    <ng-content select="[slot=title]"></ng-content>
+    <app-button (clicked)="close()">X</app-button>
+  </div>
+
+  <div class="drawer__content">
+    <ng-content></ng-content>
+  </div>
+</div>

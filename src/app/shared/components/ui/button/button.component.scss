@@ -1,20 +1,21 @@
-@use '../../../../../assets/styles/variables' as *;
-
 .btn {
-  // Base styles
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  border-radius: $radius-md;
-  font-family: $font-family-sans;
-  font-weight: $font-weight-medium;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all $transition-fast;
-  user-select: none;
 
-  &:focus {
+  border: none;
+  border-radius: var(--radius-md);
+
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-fast);
+
+  &:focus-visible {
     outline: 2px solid var(--primary-500);
     outline-offset: 2px;
   }
@@ -24,24 +25,22 @@
     opacity: 0.6;
   }
 
-  // Size variants
-  &.btn-sm {
+  &--sm {
     padding: var(--spacing-1) var(--spacing-2);
     font-size: var(--font-size-sm);
   }
 
-  &.btn-md {
+  &--md {
     padding: var(--spacing-2) var(--spacing-4);
     font-size: var(--font-size-base);
   }
 
-  &.btn-lg {
+  &--lg {
     padding: var(--spacing-3) var(--spacing-6);
     font-size: var(--font-size-lg);
   }
 
-  // Color variants
-  &.btn-primary {
+  &--primary {
     background-color: var(--primary-500);
     color: var(--white);
 
@@ -54,7 +53,7 @@
     }
   }
 
-  &.btn-secondary {
+  &--secondary {
     background-color: var(--secondary-100);
     color: var(--secondary-900);
 
@@ -67,4 +66,17 @@
     }
   }
 
+  &--ghost {
+    background-color: transparent;
+    color: var(--secondary-700);
+
+    &:hover:not(:disabled) {
+      background-color: var(--secondary-100);
+      color: var(--secondary-900);
+    }
+
+    &:active:not(:disabled) {
+      background-color: var(--secondary-200);
+    }
+  }
 }

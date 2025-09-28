@@ -1,0 +1,13 @@
+<app-drawer #drawer position="right">
+  <h3 slot="title">Koszyk</h3>
+</app-drawer>
+
+<div class="layout">
+  <app-navigation (openDrawer)="onDrawerToggle()" />
+
+  <main class="layout__main">
+    <router-outlet />
+  </main>
+
+  <app-footer />
+</div>

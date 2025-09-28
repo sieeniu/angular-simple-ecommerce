@@ -1,0 +1,112 @@
+.footer {
+  background-color: var(--secondary-900);
+  color: var(--white);
+  margin-top: auto;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+    padding: var(--spacing-12) 0 var(--spacing-8);
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--spacing-6);
+    }
+  }
+
+  &__section {
+    &:first-child {
+      @media (min-width: 768px) {
+        grid-column: 1;
+      }
+    }
+  }
+
+  &__title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin: 0 0 var(--spacing-4);
+  }
+
+  &__description {
+    color: var(--secondary-300);
+    line-height: var(--line-height-relaxed);
+    margin: 0 0 var(--spacing-6);
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--secondary-300);
+    font-size: var(--font-size-sm);
+  }
+
+  &__contact-icon {
+    color: var(--primary-400);
+    flex-shrink: 0;
+  }
+
+  &__section-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin: 0 0 var(--spacing-4);
+    color: var(--white);
+  }
+
+  &__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  &__link-item {
+    margin: 0;
+  }
+
+  &__link {
+    color: var(--secondary-300);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+    display: block;
+    padding: var(--spacing-1) 0;
+
+    &:hover {
+      color: var(--primary-400);
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid var(--secondary-700);
+    padding: var(--spacing-6) 0;
+  }
+
+  &__bottom-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__copyright {
+    color: var(--secondary-400);
+    font-size: var(--font-size-sm);
+    margin: 0;
+  }
+}

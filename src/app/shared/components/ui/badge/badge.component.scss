@@ -97,4 +97,15 @@
       color: var(--info-700);
     }
   }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-1);
+  }
+
+  &__text {
+    display: inline-block;
+  }
 }
